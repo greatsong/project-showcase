@@ -21,481 +21,395 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     body { font-family: 'Pretendard Variable', sans-serif; }
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.3s ease;
     }
-    .glass:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.15);
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.12);
     }
-    .badge {
+    .tag {
       display: inline-block;
-      padding: 2px 10px;
-      border-radius: 9999px;
+      padding: 3px 10px;
+      border-radius: 6px;
       font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.5);
     }
-    .fade-in { animation: fadeIn 0.6s ease-out both; }
+    .fade-in {
+      animation: fadeIn 0.5s ease-out both;
+    }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .card-link {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card-link:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    }
-    /* Filter buttons */
     .filter-btn {
       transition: all 0.2s ease;
     }
     .filter-btn.active {
-      background: rgba(96, 165, 250, 0.2);
-      border-color: rgba(96, 165, 250, 0.5);
-      color: #93c5fd;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
     }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-200 min-h-screen">
+<body class="bg-[#0a0a0b] text-gray-300 min-h-screen">
 
   <!-- Hero -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-gray-950 to-purple-950/30"></div>
-    <div class="relative max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-      <p class="text-sm tracking-widest text-blue-400/70 uppercase mb-4 fade-in" style="animation-delay:0.1s">Project Showcase</p>
-      <h1 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 fade-in" style="animation-delay:0.2s">
-        AI 교육 프로젝트 모음
-      </h1>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in" style="animation-delay:0.3s">
-        교실에서 AI를 활용한 교육 도구 — 평가, 콘텐츠 생성, 3D 시각화, 자기발견까지
-      </p>
-      <div class="flex justify-center gap-4 mt-8 fade-in" style="animation-delay:0.4s">
-        <a href="https://github.com/greatsong" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/15 border border-white/10 text-sm transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
+  <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
+    <p class="text-xs tracking-[0.2em] text-gray-500 uppercase mb-6 fade-in" style="animation-delay:0.1s">greatsong</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-5 fade-in" style="animation-delay:0.15s">
+      AI 교육 프로젝트
+    </h1>
+    <p class="text-lg text-gray-500 max-w-lg mx-auto leading-relaxed fade-in" style="animation-delay:0.2s">
+      교실에서 바로 쓸 수 있는 AI 교육 도구 모음
+    </p>
+    <div class="mt-8 fade-in" style="animation-delay:0.25s">
+      <a href="https://github.com/greatsong" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white border border-white/8 hover:border-white/15 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
     </div>
   </header>
 
   <!-- Filter -->
-  <nav class="max-w-6xl mx-auto px-6 mb-8">
-    <div class="flex flex-wrap gap-2 justify-center">
-      <button onclick="filterCards('all')" class="filter-btn active px-4 py-1.5 rounded-full border border-white/10 text-sm text-gray-300 hover:text-white">전체</button>
-      <button onclick="filterCards('greatsong')" class="filter-btn px-4 py-1.5 rounded-full border border-white/10 text-sm text-gray-300 hover:text-white">greatsong-project</button>
-      <button onclick="filterCards('antigravity')" class="filter-btn px-4 py-1.5 rounded-full border border-white/10 text-sm text-gray-300 hover:text-white">antigravity-project</button>
+  <nav class="max-w-5xl mx-auto px-6 mb-10">
+    <div class="flex gap-1 justify-center">
+      <button onclick="filterCards('all')" class="filter-btn active px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">전체</button>
+      <button onclick="filterCards('greatsong')" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">greatsong</button>
+      <button onclick="filterCards('antigravity')" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">antigravity</button>
     </div>
   </nav>
 
-  <!-- Projects -->
-  <main class="max-w-6xl mx-auto px-6 pb-20">
+  <main class="max-w-5xl mx-auto px-6 pb-24">
 
     <!-- greatsong-project -->
-    <section data-group="greatsong">
-      <div class="flex items-center gap-3 mb-6">
-        <h2 class="text-xl font-semibold text-gray-100">greatsong-project</h2>
-        <span class="badge bg-blue-500/15 text-blue-300 border border-blue-500/20">6 Projects</span>
-      </div>
+    <section data-group="greatsong" class="mb-16">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">greatsong-project</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <!-- 260214-ai-evaluate -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.15s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white text-lg">
-              📊
+        <!-- pyThink — Featured -->
+        <div class="card fade-in sm:col-span-2 lg:col-span-2" style="animation-delay:0.1s; border-color: rgba(250,204,21,0.12); background: linear-gradient(160deg, rgba(250,204,21,0.03) 0%, rgba(34,197,94,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="greatsong">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <!-- pyThink Logo: 전구 + 코드 프롬프트 = 생각하는 코딩 -->
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #facc15, #22c55e);">
+                <svg viewBox="0 0 36 36" fill="none" class="w-7 h-7">
+                  <!-- 전구 외곽 -->
+                  <path d="M18 4c-5.5 0-10 4.5-10 10 0 3.5 1.8 6.6 4.5 8.4V25c0 .6.4 1 1 1h9c.6 0 1-.4 1-1v-2.6C26.2 20.6 28 17.5 28 14c0-5.5-4.5-10-10-10z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255,255,255,0.1)"/>
+                  <!-- 코드 프롬프트 >_ (생각의 불꽃) -->
+                  <path d="M14 13l3.5 3-3.5 3" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="19.5" y1="19" x2="23" y2="19" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                  <!-- 전구 받침 -->
+                  <line x1="14" y1="28.5" x2="22" y2="28.5" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                  <line x1="15.5" y1="31" x2="20.5" y2="31" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold tracking-tight" style="background: linear-gradient(135deg, #facc15, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">pyThink</h3>
+                <p class="text-xs text-gray-500 mt-0.5">사고력을 위한 파이썬</p>
+              </div>
             </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Active v2.1</span>
+            <span class="text-xs text-emerald-400/70">Active</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-1">AI 교실 실천 평가</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AntiGravity</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            Claude AI 기반 루브릭 평가, 성장 분석, 생기부 초안 자동 생성. 7개 실천 유형, 레이더 차트, 학급 히트맵.
+          <p class="text-sm text-gray-500 italic mb-4">"같은 문제, 다른 생각" — 구문 암기가 아닌 사고력 훈련</p>
+          <p class="text-sm text-gray-400 mb-5 flex-1 leading-relaxed">
+            하나의 문제, 여러 풀이 경로. 171개 사고력 문제를 5단계 AI 코치와 함께 풀고,
+            풀이 갤러리에서 친구들의 다른 접근법을 비교하며 배우는 알고리즘 플랫폼.
+            Pyodide로 브라우저에서 Python 즉시 실행.
           </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Next.js 14</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Express</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Claude API</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Turso</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">SQLite</span>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="tag" style="background: rgba(250,204,21,0.08); color: rgba(250,204,21,0.7);">Pyodide</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Claude API</span>
+            <span class="tag">CodeMirror</span>
+            <span class="tag">Express</span>
           </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://260214-ai-evaluate.vercel.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-blue-500/15 text-blue-300 text-sm hover:bg-blue-500/25 transition border border-blue-500/20">Live Demo</a>
-            <a href="https://github.com/greatsong/260214-ai-evaluate" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
-          </div>
-        </div>
-
-        <!-- data-ai-book -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.25s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-yellow-400 flex items-center justify-center text-white text-lg">
-              📚
-            </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Active v0.2</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-1">에듀플로 (Streamlit)</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            AI 기반 교육 콘텐츠 자동 생성. 6단계 워크플로, 6개 교육 템플릿, MkDocs 웹사이트 + DOCX 변환.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Python</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Streamlit</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">MkDocs</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Claude API</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/greatsong" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
-          </div>
-        </div>
-
-        <!-- eduflow -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.35s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center text-white text-lg">
-              🚀
-            </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Active v0.1</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-1">에듀플로 (JS 풀스택)</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            에듀플로의 JS 리빌드. SSE 실시간 스트리밍, npm 워크스페이스, 40+ REST API 엔드포인트.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">React 19</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Express 5</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Vite</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Zustand</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">SSE</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
-          </div>
-        </div>
-
-        <!-- eduflow-portfolio -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.45s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white text-lg">
-              🎨
-            </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Active</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-1">에듀플로 포트폴리오</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            에듀플로로 생성한 교육 콘텐츠 6개 프로젝트 포트폴리오. Pico 교육, 정보과 교과과정, ML 기초 등.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">HTML</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Tailwind CSS</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">GitHub Pages</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://greatsong.github.io/eduflow-portfolio/" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-blue-500/15 text-blue-300 text-sm hover:bg-blue-500/25 transition border border-blue-500/20">Live Site</a>
-            <a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
-          </div>
-        </div>
-
-        <!-- python-for-thinking-power -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.55s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-teal-400 flex items-center justify-center text-white text-lg">
-              🐍
-            </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Active</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-1">사고력을 위한 파이썬</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            "같은 문제, 다른 생각" — 5단계 AI 코치, 풀이 갤러리, 코드 여정, 교실 라이브 대시보드. Pyodide로 브라우저에서 Python 즉시 실행.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">React 19</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Pyodide</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Express 5</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Claude API</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">SQLite</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
+          <div class="flex gap-3 mt-auto">
             <a href="https://pythink.vercel.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-blue-500/15 text-blue-300 text-sm hover:bg-blue-500/25 transition border border-blue-500/20">Live Demo</a>
+               class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition border border-yellow-500/20 text-yellow-300/80 hover:text-yellow-200 hover:border-yellow-500/30 hover:bg-yellow-500/5">pythink.vercel.app</a>
             <a href="https://github.com/greatsong/python-for-thinking-power" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
+               class="px-5 py-2.5 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
-        <!-- self-discovery -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.65s" data-group="greatsong">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-rose-400 flex items-center justify-center text-white text-lg">
-              🌟
+        <!-- AI 교실 실천 평가 -->
+        <div class="card fade-in" style="animation-delay:0.15s" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M3 3h14v14H3z" stroke="white" stroke-width="1.5" rx="2"/><path d="M7 8h6M7 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <span class="badge bg-amber-500/15 text-amber-300 border border-amber-500/20">개발 중</span>
+            <span class="text-xs text-emerald-400/70">Active</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-1">자기발견 디지털 교과서</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            Love &amp; Well 매트릭스, To Be 마인드맵, 별자리 로드맵으로 학생의 꿈을 발견하는 인터랙티브 교과서.
+          <h3 class="text-base font-semibold text-white mb-2">AI 교실 실천 평가</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            Claude AI 기반 루브릭 평가, 성장 분석, 생기부 초안 자동 생성.
           </p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Vite 7</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Vanilla JS</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Canvas</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">IndexedDB</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Claude API</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Claude API</span>
+            <span class="tag">Turso</span>
           </div>
-          <div class="flex gap-2 mt-auto">
+          <div class="flex gap-3 mt-auto">
+            <a href="https://260214-ai-evaluate.vercel.app" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Demo</a>
+            <a href="https://github.com/greatsong/260214-ai-evaluate" target="_blank" rel="noopener"
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 에듀플로 (Streamlit) -->
+        <div class="card fade-in" style="animation-delay:0.2s" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 4h4v5H4zM12 4h4v5h-4zM4 12h4v4H4zM12 12h4v4h-4z" stroke="white" stroke-width="1.5" rx="1"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">에듀플로 (Streamlit)</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            AI 기반 교육 콘텐츠 자동 생성. 6단계 워크플로, MkDocs + DOCX 변환.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Claude API</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
             <a href="https://github.com/greatsong" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 에듀플로 (JS) -->
+        <div class="card fade-in" style="animation-delay:0.25s" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3l7 4v6l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 10v7" stroke="white" stroke-width="1.5"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">에듀플로 (JS 풀스택)</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            에듀플로의 JS 리빌드. SSE 실시간 스트리밍, 40+ REST API 엔드포인트.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">React 19</span>
+            <span class="tag">Express 5</span>
+            <span class="tag">Zustand</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 에듀플로 포트폴리오 -->
+        <div class="card fade-in" style="animation-delay:0.3s" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><path d="M10 7v6M7 10h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">에듀플로 포트폴리오</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            에듀플로 생성 콘텐츠 6개 프로젝트 포트폴리오. Pico 교육, ML 기초 등.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">HTML</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://greatsong.github.io/eduflow-portfolio/" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Live Site</a>
+            <a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener"
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 자기발견 디지털 교과서 -->
+        <div class="card fade-in" style="animation-delay:0.35s" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-rose-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 4l1.5 3 3.5.5-2.5 2.5.5 3.5L10 12l-3 1.5.5-3.5L5 7.5l3.5-.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round" fill="rgba(255,255,255,0.15)"/></svg>
+            </div>
+            <span class="text-xs text-amber-400/70">개발 중</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">자기발견 디지털 교과서</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            Love &amp; Well 매트릭스, 별자리 로드맵으로 학생의 꿈을 발견하는 인터랙티브 교과서.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">Vite 7</span>
+            <span class="tag">Canvas</span>
+            <span class="tag">Claude API</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://github.com/greatsong" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <div class="section-divider mb-14"></div>
-
     <!-- antigravity-project -->
-    <section data-group="antigravity">
-      <div class="flex items-center gap-3 mb-6">
-        <h2 class="text-xl font-semibold text-gray-100">antigravity-project</h2>
-        <span class="badge bg-purple-500/15 text-purple-300 border border-purple-500/20">3 Projects</span>
-      </div>
+    <section data-group="antigravity" class="mb-16">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">antigravity-project</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <!-- MicroGPT 3D Learning -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.15s" data-group="antigravity">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-400 flex items-center justify-center text-white text-lg">
-              🧠
+        <!-- MicroGPT 3D -->
+        <div class="card fade-in" style="animation-delay:0.1s" data-group="antigravity">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3v14M3 10h14M5 5l10 10M15 5L5 15" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/><circle cx="10" cy="10" r="2.5" fill="white" opacity="0.9"/></svg>
             </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Production</span>
+            <span class="text-xs text-emerald-400/70">Production</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-1">MicroGPT 3D 학습랩</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">Claude Code</span><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AntiGravity</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            ChatGPT의 뇌를 직접 만져보는 3D 교실. 임베딩 은하, 그래디언트 레이싱, 어텐션 시각화. 15주 AI/ML 커리큘럼.
+          <h3 class="text-base font-semibold text-white mb-2">MicroGPT 3D 학습랩</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            ChatGPT의 뇌를 직접 만져보는 3D 교실. 임베딩 은하, 어텐션 시각화. 15주 커리큘럼.
           </p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Three.js</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Socket.io</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Express</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">GSAP</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Three.js</span>
+            <span class="tag">Socket.io</span>
           </div>
-          <div class="flex gap-2 mt-auto">
+          <div class="flex gap-3 mt-auto">
             <a href="https://gpt-learn.up.railway.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-blue-500/15 text-blue-300 text-sm hover:bg-blue-500/25 transition border border-blue-500/20">Live Demo</a>
+               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Demo</a>
             <a href="https://github.com/greatsong/micropgt-3d-railway" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
-          <p class="text-xs text-gray-500 mt-2 text-center">당곡고 · 신림고 · 수도여고 공동 동아리</p>
+          <p class="text-xs text-gray-600 mt-3">당곡고 · 신림고 · 수도여고 공동 동아리</p>
         </div>
 
         <!-- Context Chat -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.25s" data-group="antigravity">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-white text-lg">
-              💬
+        <div class="card fade-in" style="animation-delay:0.15s" data-group="antigravity">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </div>
-            <span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Production</span>
+            <span class="text-xs text-emerald-400/70">Production</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-1">Context Chat</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AntiGravity</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            문서(PDF, DOCX, Excel) 업로드 후 AI 대화. Google AI 기반 문맥 인식 채팅, PDF 내보내기 지원.
+          <h3 class="text-base font-semibold text-white mb-2">Context Chat</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            문서 업로드 후 AI 대화. Google AI 기반 문맥 인식 채팅, PDF 내보내기.
           </p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">React</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Vite</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Google AI</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">PDF.js</span>
+            <span class="tag">React</span>
+            <span class="tag">Google AI</span>
+            <span class="tag">PDF.js</span>
           </div>
-          <div class="flex gap-2 mt-auto">
+          <div class="flex gap-3 mt-auto">
             <a href="https://github.com/greatsong" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
         <!-- Pico Brainstorm -->
-        <div class="card-link glass rounded-2xl p-6 flex flex-col fade-in" style="animation-delay:0.35s" data-group="antigravity">
-          <div class="flex items-start justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center text-white text-lg">
-              💡
+        <div class="card fade-in" style="animation-delay:0.2s" data-group="antigravity">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 4v2M14.5 5.5l-1.5 1.5M16 10h-2M14.5 14.5l-1.5-1.5M10 16v-2M5.5 14.5l1.5-1.5M4 10h2M5.5 5.5L7 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="2.5" stroke="white" stroke-width="1.5"/></svg>
             </div>
-            <span class="badge bg-amber-500/15 text-amber-300 border border-amber-500/20">개발 중</span>
+            <span class="text-xs text-amber-400/70">개발 중</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-1">Pico Brainstorm</h3>
-          <div class="flex gap-1.5 mb-2"><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AntiGravity</span></div>
-          <p class="text-sm text-gray-400 mb-4 flex-1">
-            Google AI 기반 브레인스토밍 도구. 마크다운 렌더링, 아이디어 확장 지원.
+          <h3 class="text-base font-semibold text-white mb-2">Pico Brainstorm</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            Google AI 기반 브레인스토밍 도구. 마크다운 렌더링, 아이디어 확장.
           </p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">React</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Vite</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Google AI</span>
-            <span class="badge bg-white/5 text-gray-300 border border-white/10">Tailwind</span>
+            <span class="tag">React</span>
+            <span class="tag">Google AI</span>
+            <span class="tag">Tailwind</span>
           </div>
-          <div class="flex gap-2 mt-auto">
+          <div class="flex gap-3 mt-auto">
             <a href="https://github.com/greatsong" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg bg-white/5 text-gray-300 text-sm hover:bg-white/10 transition border border-white/10">GitHub</a>
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <div class="section-divider mb-14"></div>
-
-    <!-- Tech Overview -->
-    <section class="mb-14">
-      <h2 class="text-xl font-semibold text-gray-100 mb-6">기술 스택 요약</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="glass rounded-xl p-5 text-center">
-          <p class="text-3xl font-bold gradient-text mb-1">9</p>
-          <p class="text-sm text-gray-400">프로젝트</p>
-        </div>
-        <div class="glass rounded-xl p-5 text-center">
-          <p class="text-3xl font-bold gradient-text mb-1">5</p>
-          <p class="text-sm text-gray-400">프레임워크</p>
-          <p class="text-xs text-gray-500 mt-1">Next.js · React · Vite · Streamlit · Express</p>
-        </div>
-        <div class="glass rounded-xl p-5 text-center">
-          <p class="text-3xl font-bold gradient-text mb-1">3</p>
-          <p class="text-sm text-gray-400">AI 엔진</p>
-          <p class="text-xs text-gray-500 mt-1">Claude · Google AI · Three.js 3D</p>
-        </div>
-        <div class="glass rounded-xl p-5 text-center">
-          <p class="text-3xl font-bold gradient-text mb-1">4</p>
-          <p class="text-sm text-gray-400">배포 플랫폼</p>
-          <p class="text-xs text-gray-500 mt-1">Vercel · Railway · GitHub Pages · Local</p>
-        </div>
       </div>
     </section>
 
     <!-- Project Table -->
     <section>
-      <h2 class="text-xl font-semibold text-gray-100 mb-6">전체 프로젝트 현황</h2>
-      <div class="glass rounded-2xl overflow-x-auto">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">전체 현황</h2>
+      <div class="rounded-2xl overflow-hidden border border-white/6">
         <table class="w-full text-sm">
           <thead>
-            <tr class="border-b border-white/10 text-gray-400">
-              <th class="text-left py-3 px-4 font-medium">프로젝트</th>
-              <th class="text-left py-3 px-4 font-medium">유형</th>
-              <th class="text-left py-3 px-4 font-medium hidden sm:table-cell">주요 기술</th>
-              <th class="text-left py-3 px-4 font-medium hidden md:table-cell">포트</th>
-              <th class="text-left py-3 px-4 font-medium">배포</th>
-              <th class="text-left py-3 px-4 font-medium hidden lg:table-cell">개발 도구</th>
-              <th class="text-left py-3 px-4 font-medium">상태</th>
+            <tr class="border-b border-white/6 text-gray-500 text-xs">
+              <th class="text-left py-3 px-5 font-medium">프로젝트</th>
+              <th class="text-left py-3 px-5 font-medium hidden sm:table-cell">주요 기술</th>
+              <th class="text-left py-3 px-5 font-medium">배포</th>
+              <th class="text-left py-3 px-5 font-medium">상태</th>
             </tr>
           </thead>
-          <tbody class="text-gray-300">
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">AI 교실 실천 평가</td>
-              <td class="py-3 px-4">풀스택</td>
-              <td class="py-3 px-4 hidden sm:table-cell">Next.js + Express</td>
-              <td class="py-3 px-4 hidden md:table-cell">3000, 5001</td>
-              <td class="py-3 px-4"><span class="badge bg-blue-500/15 text-blue-300 border border-blue-500/20">Vercel</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span> <span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AG</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+          <tbody class="text-gray-400">
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium" style="background: linear-gradient(135deg, #facc15, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">pyThink</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Pyodide + Express</td>
+              <td class="py-3 px-5 text-blue-400/70">Vercel</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">에듀플로 (Streamlit)</td>
-              <td class="py-3 px-4">Python</td>
-              <td class="py-3 px-4 hidden sm:table-cell">Streamlit + MkDocs</td>
-              <td class="py-3 px-4 hidden md:table-cell">8501, 8000</td>
-              <td class="py-3 px-4"><span class="badge bg-gray-500/15 text-gray-300 border border-gray-500/20">Local</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">AI 교실 실천 평가</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Next.js + Express</td>
+              <td class="py-3 px-5 text-blue-400/70">Vercel</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">에듀플로 (JS)</td>
-              <td class="py-3 px-4">풀스택</td>
-              <td class="py-3 px-4 hidden sm:table-cell">React + Express</td>
-              <td class="py-3 px-4 hidden md:table-cell">7830, 7829</td>
-              <td class="py-3 px-4"><span class="badge bg-gray-500/15 text-gray-300 border border-gray-500/20">Local</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">에듀플로 (Streamlit)</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Streamlit + MkDocs</td>
+              <td class="py-3 px-5 text-gray-600">Local</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">에듀플로 포트폴리오</td>
-              <td class="py-3 px-4">정적</td>
-              <td class="py-3 px-4 hidden sm:table-cell">HTML + Tailwind</td>
-              <td class="py-3 px-4 hidden md:table-cell">—</td>
-              <td class="py-3 px-4"><span class="badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">GitHub Pages</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">에듀플로 (JS)</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Express</td>
+              <td class="py-3 px-5 text-gray-600">Local</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">사고력을 위한 파이썬</td>
-              <td class="py-3 px-4">풀스택</td>
-              <td class="py-3 px-4 hidden sm:table-cell">React + Pyodide + Express</td>
-              <td class="py-3 px-4 hidden md:table-cell">4000, 4001</td>
-              <td class="py-3 px-4"><span class="badge bg-blue-500/15 text-blue-300 border border-blue-500/20">Vercel</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">에듀플로 포트폴리오</td>
+              <td class="py-3 px-5 hidden sm:table-cell">HTML + Tailwind</td>
+              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">자기발견 교과서</td>
-              <td class="py-3 px-4">SPA</td>
-              <td class="py-3 px-4 hidden sm:table-cell">Vite + Canvas</td>
-              <td class="py-3 px-4 hidden md:table-cell">5173</td>
-              <td class="py-3 px-4"><span class="badge bg-gray-500/15 text-gray-300 border border-gray-500/20">미배포</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block mr-1.5"></span>개발 중</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">자기발견 교과서</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Vite + Canvas</td>
+              <td class="py-3 px-5 text-gray-600">—</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block mr-1.5"></span>개발 중</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">MicroGPT 3D 학습랩</td>
-              <td class="py-3 px-4">풀스택</td>
-              <td class="py-3 px-4 hidden sm:table-cell">Next.js + Three.js + Socket.io</td>
-              <td class="py-3 px-4 hidden md:table-cell">3000</td>
-              <td class="py-3 px-4"><span class="badge bg-purple-500/15 text-purple-300 border border-purple-500/20">Railway</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-sky-500/15 text-sky-300 border border-sky-500/20">CC</span> <span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AG</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">MicroGPT 3D</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Next.js + Three.js</td>
+              <td class="py-3 px-5 text-purple-400/70">Railway</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
             </tr>
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">Context Chat</td>
-              <td class="py-3 px-4">프론트엔드</td>
-              <td class="py-3 px-4 hidden sm:table-cell">React + Google AI</td>
-              <td class="py-3 px-4 hidden md:table-cell">5173</td>
-              <td class="py-3 px-4"><span class="badge bg-blue-500/15 text-blue-300 border border-blue-500/20">Vercel</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AG</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">Context Chat</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Google AI</td>
+              <td class="py-3 px-5 text-blue-400/70">Vercel</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
             </tr>
             <tr class="hover:bg-white/[0.02]">
-              <td class="py-3 px-4 font-medium text-white">Pico Brainstorm</td>
-              <td class="py-3 px-4">프론트엔드</td>
-              <td class="py-3 px-4 hidden sm:table-cell">React + Google AI</td>
-              <td class="py-3 px-4 hidden md:table-cell">5173</td>
-              <td class="py-3 px-4"><span class="badge bg-gray-500/15 text-gray-300 border border-gray-500/20">미배포</span></td>
-              <td class="py-3 px-4 hidden lg:table-cell"><span class="badge bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/20">AG</span></td>
-              <td class="py-3 px-4"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block mr-1.5"></span>개발 중</td>
+              <td class="py-3 px-5 text-white font-medium">Pico Brainstorm</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Google AI</td>
+              <td class="py-3 px-5 text-gray-600">—</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block mr-1.5"></span>개발 중</td>
             </tr>
           </tbody>
         </table>
@@ -504,33 +418,23 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/5 py-8 text-center text-sm text-gray-500">
-    <p>Built with Tailwind CSS &middot; Deployed on GitHub Pages</p>
-    <p class="mt-1">&copy; 2026 greatsong</p>
+  <footer class="border-t border-white/[0.04] py-10 text-center text-xs text-gray-600">
+    <p>&copy; 2026 greatsong</p>
   </footer>
 
   <script>
     function filterCards(group) {
-      // Update active button
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
-
       const sections = document.querySelectorAll('section[data-group]');
-      const dividers = document.querySelectorAll('.section-divider');
-
       if (group === 'all') {
         sections.forEach(s => s.style.display = '');
-        dividers.forEach(d => d.style.display = '');
       } else {
         sections.forEach(s => {
           s.style.display = s.dataset.group === group ? '' : 'none';
         });
-        dividers[0].style.display = group === 'all' ? '' : 'none';
       }
     }
-
-    // Intersection Observer for fade-in animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -539,7 +443,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>

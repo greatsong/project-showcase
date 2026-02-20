@@ -262,13 +262,39 @@
           </div>
         </div>
 
-        <!-- AI 채팅 평가 -->
-        <div class="card fade-in" style="animation-delay:0.4s" data-group="greatsong">
+        <!-- ProofAI (AI 채팅 평가 v2) -->
+        <div class="card fade-in" style="animation-delay:0.4s; border-color: rgba(99,102,241,0.15); background: linear-gradient(160deg, rgba(99,102,241,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="greatsong">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="6" r="2.5" fill="#6366f1" stroke="white" stroke-width="1"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            AI 채팅 평가 v2. Supabase 기반 다중 교사·학급·학생 관리, 가중치 루브릭 평가, 통계 대시보드.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag" style="background: rgba(99,102,241,0.08); color: rgba(99,102,241,0.7);">Supabase</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Multi-AI</span>
+            <span class="tag">RLS</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://proofai-eight.vercel.app" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-indigo-400/70 hover:text-indigo-300 border border-indigo-500/15 hover:border-indigo-500/25 transition">Demo</a>
+            <a href="https://github.com/greatsong/ai-eval-v2" target="_blank" rel="noopener"
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- AI 채팅 평가 (v1) -->
+        <div class="card fade-in" style="animation-delay:0.45s" data-group="greatsong">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <span class="text-xs text-gray-600">v1 · Local</span>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">AI 채팅 평가</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -280,12 +306,12 @@
             <span class="tag">Chart.js</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <span class="flex-1 text-center py-2 rounded-lg text-sm text-gray-600 border border-white/6">Local</span>
+            <span class="flex-1 text-center py-2 rounded-lg text-sm text-gray-600 border border-white/6">Local only</span>
           </div>
         </div>
 
         <!-- 자기발견 디지털 교과서 -->
-        <div class="card fade-in" style="animation-delay:0.45s" data-group="greatsong">
+        <div class="card fade-in" style="animation-delay:0.5s" data-group="greatsong">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-rose-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 4l1.5 3 3.5.5-2.5 2.5.5 3.5L10 12l-3 1.5.5-3.5L5 7.5l3.5-.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round" fill="rgba(255,255,255,0.15)"/></svg>
@@ -442,10 +468,16 @@
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
             <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
-              <td class="py-3 px-5 text-white font-medium">AI 채팅 평가</td>
+              <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Supabase + Multi-AI</td>
+              <td class="py-3 px-5 text-blue-400/70">Vercel</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            </tr>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
+              <td class="py-3 px-5 text-white font-medium">AI 채팅 평가 (v1)</td>
               <td class="py-3 px-5 hidden sm:table-cell">React + Multi-AI API</td>
               <td class="py-3 px-5 text-gray-600">Local</td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-500 inline-block mr-1.5"></span>v1</td>
             </tr>
             <tr class="border-b border-white/[0.03] hover:bg-white/[0.02]">
               <td class="py-3 px-5 text-white font-medium">자기발견 교과서</td>

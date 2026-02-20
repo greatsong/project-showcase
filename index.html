@@ -85,23 +85,24 @@
 
   <!-- Filter -->
   <nav class="max-w-5xl mx-auto px-6 mb-10">
-    <div class="flex gap-1 justify-center">
+    <div class="flex gap-1 justify-center flex-wrap">
       <button onclick="filterCards('all', this)" class="filter-btn active px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">전체</button>
-      <button onclick="filterCards('claude-code', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">claude code</button>
-      <button onclick="filterCards('antigravity', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">antigravity</button>
+      <button onclick="filterCards('learning', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">학습 플랫폼</button>
+      <button onclick="filterCards('assessment', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">평가 도구</button>
+      <button onclick="filterCards('content', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">교육자료 제작</button>
     </div>
   </nav>
 
   <main class="max-w-5xl mx-auto px-6 pb-24">
 
-    <!-- claude code -->
-    <section data-group="claude-code" class="mb-16">
-      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">claude code</h2>
+    <!-- 학습 플랫폼 -->
+    <section data-group="learning" class="mb-16">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">학습 플랫폼</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- pyThink — Featured -->
-        <div class="card fade-in sm:col-span-2 lg:col-span-2" style="animation-delay:0.1s; border-color: rgba(250,204,21,0.12); background: linear-gradient(160deg, rgba(250,204,21,0.03) 0%, rgba(34,197,94,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="claude-code">
+        <div class="card fade-in sm:col-span-2 lg:col-span-2" style="animation-delay:0.1s; border-color: rgba(250,204,21,0.12); background: linear-gradient(160deg, rgba(250,204,21,0.03) 0%, rgba(34,197,94,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="learning">
           <div class="flex items-start justify-between mb-5">
             <div class="flex items-center gap-3">
               <!-- pyThink Logo: 전구 + 코드 프롬프트 = 생각하는 코딩 -->
@@ -141,14 +142,75 @@
           </div>
           <div class="flex gap-3 mt-auto">
             <a href="https://pythink.vercel.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition border border-yellow-500/20 text-yellow-300/80 hover:text-yellow-200 hover:border-yellow-500/30 hover:bg-yellow-500/5">Live Demo</a>
+               class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition border border-yellow-500/20 text-yellow-300/80 hover:text-yellow-200 hover:border-yellow-500/30 hover:bg-yellow-500/5">Demo</a>
             <a href="https://github.com/greatsong/python-for-thinking-power" target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
+        <!-- MicroGPT 3D -->
+        <div class="card fade-in" style="animation-delay:0.15s" data-group="learning">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3v14M3 10h14M5 5l10 10M15 5L5 15" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/><circle cx="10" cy="10" r="2.5" fill="white" opacity="0.9"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Production</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">MicroGPT 3D 학습랩</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            ChatGPT의 뇌를 직접 만져보는 3D 교실. 임베딩 은하, 어텐션 시각화. 15주 커리큘럼.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">Three.js</span>
+            <span class="tag">Socket.io</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://gpt-learn.up.railway.app" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Demo</a>
+            <a href="https://github.com/greatsong/micropgt-3d-railway" target="_blank" rel="noopener"
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+          <p class="text-xs text-gray-600 mt-3">당곡고 · 신림고 · 수도여고 공동 동아리</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 평가 도구 -->
+    <section data-group="assessment" class="mb-16">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">평가 도구</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- ProofAI (AI 채팅 평가 v2) -->
+        <div class="card fade-in" style="animation-delay:0.1s; border-color: rgba(99,102,241,0.15); background: linear-gradient(160deg, rgba(99,102,241,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="assessment">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="6" r="2.5" fill="#6366f1" stroke="white" stroke-width="1"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            AI 채팅 평가 v2. Supabase 기반 다중 교사·학급·학생 관리, 가중치 루브릭 평가, 통계 대시보드.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag" style="background: rgba(99,102,241,0.08); color: rgba(99,102,241,0.7);">Supabase</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Multi-AI</span>
+            <span class="tag">RLS</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://pro-of-ai.vercel.app" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-indigo-400/70 hover:text-indigo-300 border border-indigo-500/15 hover:border-indigo-500/25 transition">Demo</a>
+            <a href="https://github.com/greatsong/ai-eval-v2" target="_blank" rel="noopener"
+               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
         <!-- AI 교실 실천 평가 -->
-        <div class="card fade-in" style="animation-delay:0.15s" data-group="claude-code">
+        <div class="card fade-in" style="animation-delay:0.15s" data-group="assessment">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M3 3h14v14H3z" stroke="white" stroke-width="1.5" rx="2"/><path d="M7 8h6M7 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -165,62 +227,13 @@
             <span class="tag">SQLite</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <a href="https://260214-ai-evaluate.vercel.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Demo</a>
             <a href="https://github.com/greatsong/260214-ai-evaluate" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
-        <!-- 에듀플로 (JS) -->
-        <div class="card fade-in" style="animation-delay:0.25s" data-group="claude-code">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3l7 4v6l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 10v7" stroke="white" stroke-width="1.5"/></svg>
-            </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2">에듀플로 (JS 풀스택)</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            에듀플로의 JS 리빌드. SSE 실시간 스트리밍, 40+ REST API 엔드포인트.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag">React 19</span>
-            <span class="tag">Express 5</span>
-            <span class="tag">Zustand</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
                class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
         </div>
 
-        <!-- 에듀플로 포트폴리오 -->
-        <div class="card fade-in" style="animation-delay:0.3s" data-group="claude-code">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><path d="M10 7v6M7 10h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2">에듀플로 포트폴리오</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            에듀플로 생성 콘텐츠 6개 프로젝트 포트폴리오. Pico 교육, ML 기초 등.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag">HTML</span>
-            <span class="tag">Tailwind CSS</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://greatsong.github.io/eduflow-portfolio/" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Live Site</a>
-            <a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
         <!-- Rubric Studio V2 -->
-        <div class="card fade-in" style="animation-delay:0.35s" data-group="claude-code">
+        <div class="card fade-in" style="animation-delay:0.2s" data-group="assessment">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 4h12v2H4zM4 8h12v2H4zM4 12h8v2H4zM14 12l2 2-2 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -243,34 +256,8 @@
           </div>
         </div>
 
-        <!-- ProofAI (AI 채팅 평가 v2) -->
-        <div class="card fade-in" style="animation-delay:0.4s; border-color: rgba(99,102,241,0.15); background: linear-gradient(160deg, rgba(99,102,241,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="claude-code">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="6" r="2.5" fill="#6366f1" stroke="white" stroke-width="1"/></svg>
-            </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            AI 채팅 평가 v2. Supabase 기반 다중 교사·학급·학생 관리, 가중치 루브릭 평가, 통계 대시보드.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag" style="background: rgba(99,102,241,0.08); color: rgba(99,102,241,0.7);">Supabase</span>
-            <span class="tag">React 19</span>
-            <span class="tag">Multi-AI</span>
-            <span class="tag">RLS</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://proofai-eight.vercel.app" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-indigo-400/70 hover:text-indigo-300 border border-indigo-500/15 hover:border-indigo-500/25 transition">Demo</a>
-            <a href="https://github.com/greatsong/ai-eval-v2" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
         <!-- AI 채팅 평가 (v1) -->
-        <div class="card fade-in" style="animation-delay:0.45s" data-group="claude-code">
+        <div class="card fade-in" style="animation-delay:0.25s" data-group="assessment">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
@@ -296,36 +283,57 @@
       </div>
     </section>
 
-    <!-- antigravity -->
-    <section data-group="antigravity" class="mb-16">
-      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">antigravity</h2>
+    <!-- 교육자료 제작 -->
+    <section data-group="content" class="mb-16">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in">교육자료 제작</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <!-- MicroGPT 3D -->
-        <div class="card fade-in" style="animation-delay:0.1s" data-group="antigravity">
+        <!-- 에듀플로 (JS) -->
+        <div class="card fade-in" style="animation-delay:0.1s" data-group="content">
           <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3v14M3 10h14M5 5l10 10M15 5L5 15" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/><circle cx="10" cy="10" r="2.5" fill="white" opacity="0.9"/></svg>
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3l7 4v6l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 10v7" stroke="white" stroke-width="1.5"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Production</span>
+            <span class="text-xs text-emerald-400/70">Active</span>
           </div>
-          <h3 class="text-base font-semibold text-white mb-2">MicroGPT 3D 학습랩</h3>
+          <h3 class="text-base font-semibold text-white mb-2">에듀플로 (JS)</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
-            ChatGPT의 뇌를 직접 만져보는 3D 교실. 임베딩 은하, 어텐션 시각화. 15주 커리큘럼.
+            수업용 교육자료를 AI로 개발하는 서비스. SSE 실시간 스트리밍, 40+ REST API 엔드포인트.
           </p>
           <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag">Next.js 16</span>
-            <span class="tag">Three.js</span>
-            <span class="tag">Socket.io</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Express 5</span>
+            <span class="tag">Zustand</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <a href="https://gpt-learn.up.railway.app" target="_blank" rel="noopener"
+            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 에듀플로 포트폴리오 -->
+        <div class="card fade-in" style="animation-delay:0.15s" data-group="content">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><path d="M10 7v6M7 10h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="text-xs text-emerald-400/70">Active</span>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2">에듀플로 포트폴리오</h3>
+          <p class="text-sm text-gray-500 mb-4 flex-1">
+            에듀플로로 생성한 교육자료 6개 프로젝트 모음집. Pico 교육, ML 기초 등.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="tag">HTML</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://greatsong.github.io/eduflow-portfolio/" target="_blank" rel="noopener"
                class="flex-1 text-center py-2 rounded-lg text-sm text-blue-400/70 hover:text-blue-300 border border-blue-500/15 hover:border-blue-500/25 transition">Demo</a>
-            <a href="https://github.com/greatsong/micropgt-3d-railway" target="_blank" rel="noopener"
+            <a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener"
                class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
           </div>
-          <p class="text-xs text-gray-600 mt-3">당곡고 · 신림고 · 수도여고 공동 동아리</p>
         </div>
 
       </div>
@@ -366,76 +374,76 @@
             <tr class="border-b border-white/6 text-gray-500 text-xs">
               <th class="text-left py-3 px-5 font-medium">프로젝트</th>
               <th class="text-left py-3 px-5 font-medium hidden sm:table-cell">주요 기술</th>
-              <th class="text-left py-3 px-5 font-medium hidden md:table-cell">그룹</th>
+              <th class="text-left py-3 px-5 font-medium hidden md:table-cell">카테고리</th>
               <th class="text-left py-3 px-5 font-medium">배포</th>
               <th class="text-left py-3 px-5 font-medium">공개</th>
               <th class="text-left py-3 px-5 font-medium">상태</th>
             </tr>
           </thead>
           <tbody class="text-gray-400">
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-repo="python-for-thinking-power" data-order="1" data-stars="0">
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="learning" data-repo="python-for-thinking-power" data-order="1" data-stars="0">
               <td class="py-3 px-5 text-white font-medium" style="background: linear-gradient(135deg, #facc15, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">pyThink</td>
-              <td class="py-3 px-5 hidden sm:table-cell">React + Pyodide + Express + SQLite</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Pyodide + Claude API + Express</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">학습 플랫폼</td>
               <td class="py-3 px-5 text-blue-400/70">Vercel + Railway</td>
               <td class="py-3 px-5"><a href="https://github.com/greatsong/python-for-thinking-power" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-repo="260214-ai-evaluate" data-order="2" data-stars="0">
-              <td class="py-3 px-5 text-white font-medium">AI 교실 실천 평가</td>
-              <td class="py-3 px-5 hidden sm:table-cell">Next.js + Express + SQLite</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
-              <td class="py-3 px-5 text-blue-400/70">Vercel</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/260214-ai-evaluate" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="learning" data-repo="micropgt-3d-railway" data-order="2" data-stars="0">
+              <td class="py-3 px-5 text-white font-medium">MicroGPT 3D</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Next.js 16 + Three.js + Socket.io</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">학습 플랫폼</td>
+              <td class="py-3 px-5 text-purple-400/70">Railway</td>
+              <td class="py-3 px-5"><a href="https://github.com/greatsong/micropgt-3d-railway" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
             </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-order="3" data-stars="-1">
-              <td class="py-3 px-5 text-white font-medium">에듀플로 (JS)</td>
-              <td class="py-3 px-5 hidden sm:table-cell">React 19 + Express 5 + Zustand</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
-              <td class="py-3 px-5 text-gray-600">Local</td>
-              <td class="py-3 px-5"><span class="inline-flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-repo="eduflow-portfolio" data-order="4" data-stars="0">
-              <td class="py-3 px-5 text-white font-medium">에듀플로 포트폴리오</td>
-              <td class="py-3 px-5 hidden sm:table-cell">HTML + Tailwind</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
-              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-order="5" data-stars="-1">
-              <td class="py-3 px-5 text-white font-medium">Rubric Studio V2</td>
-              <td class="py-3 px-5 hidden sm:table-cell">React + Google AI + Firebase</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
-              <td class="py-3 px-5 text-gray-600">—</td>
-              <td class="py-3 px-5"><span class="inline-flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-repo="ai-eval-v2" data-order="6" data-stars="0">
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="assessment" data-repo="ai-eval-v2" data-order="3" data-stars="0">
               <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</td>
               <td class="py-3 px-5 hidden sm:table-cell">React + Supabase + Multi-AI</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">평가 도구</td>
               <td class="py-3 px-5 text-blue-400/70">Vercel</td>
               <td class="py-3 px-5"><a href="https://github.com/greatsong/ai-eval-v2" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="claude-code" data-repo="2026aichattingreader" data-order="7" data-stars="0">
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="assessment" data-repo="260214-ai-evaluate" data-order="4" data-stars="0">
+              <td class="py-3 px-5 text-white font-medium">AI 교실 실천 평가</td>
+              <td class="py-3 px-5 hidden sm:table-cell">Next.js 14 + Claude API + SQLite</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">평가 도구</td>
+              <td class="py-3 px-5 text-gray-600">—</td>
+              <td class="py-3 px-5"><a href="https://github.com/greatsong/260214-ai-evaluate" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            </tr>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="assessment" data-order="5" data-stars="-1">
+              <td class="py-3 px-5 text-white font-medium">Rubric Studio V2</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React + Google AI + Firebase</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">평가 도구</td>
+              <td class="py-3 px-5 text-gray-600">—</td>
+              <td class="py-3 px-5"><span class="inline-flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            </tr>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="assessment" data-repo="2026aichattingreader" data-order="6" data-stars="0">
               <td class="py-3 px-5 text-white font-medium">AI 채팅 평가 (v1)</td>
               <td class="py-3 px-5 hidden sm:table-cell">React 19 + Multi-AI + Vercel KV</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">claude code</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">평가 도구</td>
               <td class="py-3 px-5 text-blue-400/70">Vercel</td>
               <td class="py-3 px-5"><a href="https://github.com/greatsong/2026aichattingreader" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="antigravity" data-repo="micropgt-3d-railway" data-order="8" data-stars="0">
-              <td class="py-3 px-5 text-white font-medium">MicroGPT 3D</td>
-              <td class="py-3 px-5 hidden sm:table-cell">Next.js 16 + Three.js + Socket.io</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">antigravity</td>
-              <td class="py-3 px-5 text-purple-400/70">Railway</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/micropgt-3d-railway" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Production</td>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-order="7" data-stars="-1">
+              <td class="py-3 px-5 text-white font-medium">에듀플로 (JS)</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React 19 + Express 5 + Zustand</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">교육자료 제작</td>
+              <td class="py-3 px-5 text-gray-600">Local</td>
+              <td class="py-3 px-5"><span class="inline-flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            </tr>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="eduflow-portfolio" data-order="8" data-stars="0">
+              <td class="py-3 px-5 text-white font-medium">에듀플로 포트폴리오</td>
+              <td class="py-3 px-5 hidden sm:table-cell">HTML + Tailwind</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">교육자료 제작</td>
+              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
+              <td class="py-3 px-5"><a href="https://github.com/greatsong/eduflow-portfolio" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
           </tbody>
         </table>

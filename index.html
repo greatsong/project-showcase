@@ -83,13 +83,20 @@
     </div>
   </header>
 
-  <!-- Filter -->
+  <!-- Filter & Sort -->
   <nav class="max-w-5xl mx-auto px-6 mb-10">
-    <div class="flex gap-1 justify-center flex-wrap">
-      <button onclick="filterCards('all', this)" class="filter-btn active px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">전체</button>
-      <button onclick="filterCards('learning', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">학습 플랫폼</button>
-      <button onclick="filterCards('assessment', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">평가 도구</button>
-      <button onclick="filterCards('content', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">교육자료 제작</button>
+    <div class="flex gap-3 justify-center flex-wrap items-center">
+      <div class="flex gap-1">
+        <button onclick="filterCards('all', this)" class="filter-btn active px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">전체</button>
+        <button onclick="filterCards('learning', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">학습 플랫폼</button>
+        <button onclick="filterCards('assessment', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">평가 도구</button>
+        <button onclick="filterCards('content', this)" class="filter-btn px-4 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">교육자료 제작</button>
+      </div>
+      <span class="text-gray-700">|</span>
+      <div class="flex gap-1">
+        <button onclick="sortAll('default', this)" class="sort-btn active px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">최신순</button>
+        <button onclick="sortAll('stars', this)" class="sort-btn px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:text-gray-300">스타순</button>
+      </div>
     </div>
   </nav>
 
@@ -102,7 +109,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- pyThink — Featured -->
-        <div class="card fade-in sm:col-span-2 lg:col-span-2" style="animation-delay:0.1s; border-color: rgba(250,204,21,0.12); background: linear-gradient(160deg, rgba(250,204,21,0.03) 0%, rgba(34,197,94,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="learning">
+        <div class="card fade-in sm:col-span-2 lg:col-span-2 project-card" style="animation-delay:0.1s; border-color: rgba(250,204,21,0.12); background: linear-gradient(160deg, rgba(250,204,21,0.03) 0%, rgba(34,197,94,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="learning" data-repo="python-for-thinking-power" data-order="1" data-stars="0">
           <div class="flex items-start justify-between mb-5">
             <div class="flex items-center gap-3">
               <!-- pyThink Logo: 전구 + 코드 프롬프트 = 생각하는 코딩 -->
@@ -123,7 +130,10 @@
                 <p class="text-xs text-gray-500 mt-0.5">사고력을 위한 파이썬</p>
               </div>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <p class="text-sm text-gray-500 italic mb-4">"같은 문제, 다른 생각" — 구문 암기가 아닌 사고력 훈련</p>
           <p class="text-sm text-gray-400 mb-5 flex-1 leading-relaxed">
@@ -149,12 +159,15 @@
         </div>
 
         <!-- MicroGPT 3D -->
-        <div class="card fade-in" style="animation-delay:0.15s" data-group="learning">
+        <div class="card fade-in project-card" style="animation-delay:0.15s" data-group="learning" data-repo="micropgt-3d-railway" data-order="2" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3v14M3 10h14M5 5l10 10M15 5L5 15" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/><circle cx="10" cy="10" r="2.5" fill="white" opacity="0.9"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Production</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Production</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">MicroGPT 3D 학습랩</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -184,12 +197,15 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- ProofAI (AI 채팅 평가 v2) -->
-        <div class="card fade-in" style="animation-delay:0.1s; border-color: rgba(99,102,241,0.15); background: linear-gradient(160deg, rgba(99,102,241,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="assessment">
+        <div class="card fade-in project-card" style="animation-delay:0.1s; border-color: rgba(99,102,241,0.15); background: linear-gradient(160deg, rgba(99,102,241,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(255,255,255,0.02) 100%);" data-group="assessment" data-repo="ai-eval-v2" data-order="3" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="6" r="2.5" fill="#6366f1" stroke="white" stroke-width="1"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ProofAI</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -210,12 +226,15 @@
         </div>
 
         <!-- AI 교실 실천 평가 -->
-        <div class="card fade-in" style="animation-delay:0.15s" data-group="assessment">
+        <div class="card fade-in project-card" style="animation-delay:0.15s" data-group="assessment" data-repo="260214-ai-evaluate" data-order="4" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M3 3h14v14H3z" stroke="white" stroke-width="1.5" rx="2"/><path d="M7 8h6M7 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">AI 교실 실천 평가</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -233,12 +252,14 @@
         </div>
 
         <!-- Rubric Studio V2 -->
-        <div class="card fade-in" style="animation-delay:0.2s" data-group="assessment">
+        <div class="card fade-in project-card" style="animation-delay:0.2s" data-group="assessment" data-order="5" data-stars="-1">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 4h12v2H4zM4 8h12v2H4zM4 12h8v2H4zM14 12l2 2-2 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">Rubric Studio V2</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -251,18 +272,20 @@
             <span class="tag">Zustand</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <a href="https://github.com/greatsong/rubric-studio2" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+            <span class="flex-1 text-center py-2 rounded-lg text-sm text-gray-600 border border-white/4 inline-flex items-center justify-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span>
           </div>
         </div>
 
         <!-- AI 채팅 평가 (v1) -->
-        <div class="card fade-in" style="animation-delay:0.25s" data-group="assessment">
+        <div class="card fade-in project-card" style="animation-delay:0.25s" data-group="assessment" data-repo="2026aichattingreader" data-order="6" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M4 5h12v8H8l-4 3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h4M8 11h2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">AI 채팅 평가</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -290,12 +313,14 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- 에듀플로 (JS) -->
-        <div class="card fade-in" style="animation-delay:0.1s" data-group="content">
+        <div class="card fade-in project-card" style="animation-delay:0.1s" data-group="content" data-order="7" data-stars="-1">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3l7 4v6l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 10v7" stroke="white" stroke-width="1.5"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">에듀플로 (JS)</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -307,18 +332,20 @@
             <span class="tag">Zustand</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+            <span class="flex-1 text-center py-2 rounded-lg text-sm text-gray-600 border border-white/4 inline-flex items-center justify-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span>
           </div>
         </div>
 
         <!-- 에듀플로 포트폴리오 -->
-        <div class="card fade-in" style="animation-delay:0.15s" data-group="content">
+        <div class="card fade-in project-card" style="animation-delay:0.15s" data-group="content" data-repo="eduflow-portfolio" data-order="8" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><path d="M10 7v6M7 10h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <span class="text-xs text-emerald-400/70">Active</span>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
           </div>
           <h3 class="text-base font-semibold text-white mb-2">에듀플로 포트폴리오</h3>
           <p class="text-sm text-gray-500 mb-4 flex-1">
@@ -337,6 +364,12 @@
         </div>
 
       </div>
+    </section>
+
+    <!-- Sorted Cards (flat grid, hidden by default) -->
+    <section id="sorted-cards-section" class="mb-16" style="display:none;">
+      <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase mb-6 fade-in" id="sorted-cards-label">스타순</h2>
+      <div id="sorted-cards-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
     <!-- GitHub Star CTA -->
@@ -364,8 +397,8 @@
       <div class="flex items-center justify-between mb-6 fade-in">
         <h2 class="text-xs tracking-[0.15em] text-gray-600 uppercase">전체 현황</h2>
         <div class="flex gap-1">
-          <button onclick="sortTable('default', this)" class="sort-btn active px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-300 transition">최신순</button>
-          <button onclick="sortTable('stars', this)" class="sort-btn px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-300 transition">스타순</button>
+          <button onclick="sortAll('default', this)" class="sort-btn active px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-300 transition">최신순</button>
+          <button onclick="sortAll('stars', this)" class="sort-btn px-3 py-1 rounded-md text-xs text-gray-500 hover:text-gray-300 transition">스타순</button>
         </div>
       </div>
       <div class="rounded-2xl overflow-hidden border border-white/6">
@@ -457,23 +490,81 @@
   </footer>
 
   <script>
+    let currentFilter = 'all';
+    let currentSort = 'default';
+
     function filterCards(group, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const sections = document.querySelectorAll('section[data-group]');
-      const rows = document.querySelectorAll('.table-row-filter');
-      if (group === 'all') {
-        sections.forEach(s => s.style.display = '');
-        rows.forEach(r => r.style.display = '');
-      } else {
-        sections.forEach(s => {
-          s.style.display = s.dataset.group === group ? '' : 'none';
-        });
-        rows.forEach(r => {
-          r.style.display = r.dataset.group === group ? '' : 'none';
-        });
-      }
+      currentFilter = group;
+      applyView();
     }
+
+    function sortAll(mode, btn) {
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSort = mode;
+      applyView();
+    }
+
+    function applyView() {
+      const categorySections = document.querySelectorAll('section[data-group]');
+      const sortedSection = document.getElementById('sorted-cards-section');
+      const sortedGrid = document.getElementById('sorted-cards-grid');
+      const sortedLabel = document.getElementById('sorted-cards-label');
+      const rows = document.querySelectorAll('.table-row-filter');
+
+      if (currentSort === 'stars') {
+        // 스타순: 카테고리 섹션 숨기고 flat grid 표시
+        categorySections.forEach(s => s.style.display = 'none');
+        sortedSection.style.display = '';
+        sortedLabel.textContent = currentFilter === 'all' ? '스타순 정렬' :
+          currentFilter === 'learning' ? '학습 플랫폼 · 스타순' :
+          currentFilter === 'assessment' ? '평가 도구 · 스타순' : '교육자료 제작 · 스타순';
+
+        // 카드 수집 및 정렬
+        const allCards = Array.from(document.querySelectorAll('.project-card'));
+        const filtered = currentFilter === 'all' ? allCards : allCards.filter(c => c.dataset.group === currentFilter);
+        filtered.sort((a, b) => parseInt(b.dataset.stars) - parseInt(a.dataset.stars));
+
+        // flat grid에 클론 배치
+        sortedGrid.innerHTML = '';
+        filtered.forEach(card => {
+          const clone = card.cloneNode(true);
+          // 스타순에서는 featured 카드도 1칸으로
+          clone.classList.remove('sm:col-span-2', 'lg:col-span-2');
+          clone.style.display = '';
+          sortedGrid.appendChild(clone);
+        });
+      } else {
+        // 최신순: 원래 카테고리 섹션 표시
+        sortedSection.style.display = 'none';
+        if (currentFilter === 'all') {
+          categorySections.forEach(s => s.style.display = '');
+        } else {
+          categorySections.forEach(s => {
+            s.style.display = s.dataset.group === currentFilter ? '' : 'none';
+          });
+        }
+      }
+
+      // 테이블 행 필터 + 정렬
+      const tbody = document.querySelector('table tbody');
+      const rowArr = Array.from(rows);
+      // 필터
+      rowArr.forEach(r => {
+        r.style.display = (currentFilter === 'all' || r.dataset.group === currentFilter) ? '' : 'none';
+      });
+      // 정렬
+      rowArr.sort((a, b) => {
+        if (currentSort === 'stars') {
+          return parseInt(b.dataset.stars) - parseInt(a.dataset.stars);
+        }
+        return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+      });
+      rowArr.forEach(r => tbody.appendChild(r));
+    }
+
     // GitHub Stars
     const repos = ['python-for-thinking-power','260214-ai-evaluate','eduflow-portfolio','ai-eval-v2','2026aichattingreader','micropgt-3d-railway'];
     async function fetchStars() {
@@ -483,30 +574,34 @@
       results.forEach((result, i) => {
         if (result.status === 'fulfilled' && result.value.stargazers_count !== undefined) {
           const count = result.value.stargazers_count;
+          // 테이블 행 업데이트
           const row = document.querySelector('tr[data-repo="' + repos[i] + '"]');
           if (row) {
             row.dataset.stars = count;
             const span = row.querySelector('.star-count');
             if (span) span.textContent = count;
           }
+          // 카드 업데이트
+          document.querySelectorAll('.project-card[data-repo="' + repos[i] + '"]').forEach(card => {
+            card.dataset.stars = count;
+            const badge = card.querySelector('.card-star-badge');
+            const countEl = card.querySelector('.card-star-count');
+            if (badge && countEl) {
+              countEl.textContent = count;
+              badge.style.display = 'inline-flex';
+            }
+          });
         }
       });
     }
     fetchStars();
 
-    // Sort table
+    // 테이블 섹션의 정렬 버튼 (기존 호환)
     function sortTable(mode, btn) {
       document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const tbody = document.querySelector('table tbody');
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      rows.sort((a, b) => {
-        if (mode === 'stars') {
-          return parseInt(b.dataset.stars) - parseInt(a.dataset.stars);
-        }
-        return parseInt(a.dataset.order) - parseInt(b.dataset.order);
-      });
-      rows.forEach(r => tbody.appendChild(r));
+      currentSort = mode;
+      applyView();
     }
 
     const observer = new IntersectionObserver((entries) => {

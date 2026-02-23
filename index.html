@@ -387,7 +387,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- 에듀플로 (JS) -->
-        <div class="card fade-in project-card" style="animation-delay:0.1s" data-group="content" data-order="7" data-stars="-1">
+        <div class="card fade-in project-card" style="animation-delay:0.1s" data-group="content" data-repo="eduflow-js" data-order="7" data-stars="0">
           <div class="flex items-start justify-between mb-4">
             <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
               <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 3l7 4v6l-7 4-7-4V7l7-4z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 10v7" stroke="white" stroke-width="1.5"/></svg>
@@ -407,7 +407,8 @@
             <span class="tag">Zustand</span>
           </div>
           <div class="flex gap-3 mt-auto">
-            <span class="flex-1 text-center py-2 rounded-lg text-sm text-gray-600 border border-white/4 inline-flex items-center justify-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span>
+            <a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener"
+              class="flex-1 text-center py-2 rounded-lg text-sm text-gray-400 hover:text-white border border-white/4 hover:border-white/10 transition">GitHub</a>
           </div>
         </div>
 
@@ -706,12 +707,12 @@
               <td class="py-3 px-5"><a href="https://github.com/greatsong/2026aichattingreader" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-order="7" data-stars="-1">
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="eduflow-js" data-order="7" data-stars="0">
               <td class="py-3 px-5 text-white font-medium">에듀플로 (JS)</td>
               <td class="py-3 px-5 hidden sm:table-cell">React 19 + Express 5 + Zustand</td>
               <td class="py-3 px-5 hidden md:table-cell text-gray-500">교육자료 제작</td>
               <td class="py-3 px-5 text-gray-600">Local</td>
-              <td class="py-3 px-5"><span class="inline-flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Private</span></td>
+              <td class="py-3 px-5"><a href="https://github.com/greatsong/eduflow-js" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
             <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="eduflow-portfolio" data-order="8" data-stars="0">
@@ -850,7 +851,7 @@
     }
 
     // GitHub Stars
-    const repos = ['python-for-thinking-power','data-literacy-lab','260214-ai-evaluate','eduflow-portfolio','ai-eval-v2','2026aichattingreader','micropgt-3d-railway','class-manager-song','info-class-svg','ai-literacy-test'];
+    const repos = ['python-for-thinking-power','data-literacy-lab','260214-ai-evaluate','eduflow-js','eduflow-portfolio','ai-eval-v2','2026aichattingreader','micropgt-3d-railway','class-manager-song','info-class-svg','ai-literacy-test'];
     async function fetchStars() {
       const results = await Promise.allSettled(
         repos.map(r => fetch('https://api.github.com/repos/greatsong/' + r).then(res => res.json()))

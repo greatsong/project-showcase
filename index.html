@@ -870,8 +870,9 @@
       rowArr.forEach(r => tbody.appendChild(r));
     }
 
-    // GitHub Stars (with localStorage cache)
+    // GitHub Stars (with localStorage cache + static fallback)
     const repos = ['python-for-thinking-power','data-literacy-lab','260214-ai-evaluate','eduflow-js','eduflow-portfolio','ai-eval-v2','2026aichattingreader','micropgt-3d-railway','class-manager-song','info-class-svg','ai-literacy-test','rubric-studio2','context-chat','pico-brainstorm'];
+    const STATIC_STARS = {'python-for-thinking-power':9,'data-literacy-lab':5,'260214-ai-evaluate':1,'eduflow-js':3,'eduflow-portfolio':9,'ai-eval-v2':1,'2026aichattingreader':1,'micropgt-3d-railway':3,'class-manager-song':0,'info-class-svg':1,'ai-literacy-test':2,'rubric-studio2':0,'context-chat':0,'pico-brainstorm':1};
     const CACHE_KEY = 'gh_stars_cache';
     const CACHE_TTL = 30 * 60 * 1000; // 30분
 
@@ -916,11 +917,11 @@
       });
     }
 
-    // 캐시된 데이터가 있으면 즉시 표시
+    // 즉시 표시: 캐시 → 없으면 정적 기본값
     try {
       const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
-      if (cached && cached.data) applyStars(cached.data);
-    } catch(e) {}
+      applyStars(cached && cached.data ? cached.data : STATIC_STARS);
+    } catch(e) { applyStars(STATIC_STARS); }
 
     async function fetchStars() {
       try {

@@ -160,6 +160,59 @@
           </div>
         </div>
 
+        <!-- pythink2 — Featured -->
+        <div class="card fade-in sm:col-span-2 lg:col-span-3 project-card" style="animation-delay:0.12s; border-color: rgba(249,115,22,0.15); background: linear-gradient(160deg, rgba(249,115,22,0.04) 0%, rgba(168,85,247,0.03) 50%, rgba(255,255,255,0.02) 100%);" data-group="learning" data-repo="pythink2" data-order="1" data-stars="0">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <!-- pythink2 Logo: 벡터 공간 + 궤적 = 사고력 측정 -->
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #f97316, #a855f7);">
+                <svg viewBox="0 0 36 36" fill="none" class="w-7 h-7">
+                  <!-- 벡터 공간 격자 -->
+                  <line x1="8" y1="28" x2="28" y2="28" stroke="white" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="8" y1="28" x2="8" y2="8" stroke="white" stroke-width="1.5" opacity="0.4"/>
+                  <!-- 궤적 곡선 (성장 경로) -->
+                  <path d="M10 26 C14 24, 16 18, 20 16 S26 10, 28 8" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                  <!-- 현재 위치 점 -->
+                  <circle cx="20" cy="16" r="2.5" fill="white" opacity="0.9"/>
+                  <!-- 속도 화살표 -->
+                  <path d="M22 14l4-3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M26 11l-1 3.5-2.5-1" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold tracking-tight" style="background: linear-gradient(135deg, #f97316, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">pythink2</h3>
+                <p class="text-xs text-gray-500 mt-0.5">맞춤형 컴퓨팅 사고력 교실</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
+              <span class="text-xs text-emerald-400/70">Active</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-500 italic mb-4">"측정 불가능했던 사고력 교육의 암묵지를, 측정 가능하게 만드는 것"</p>
+          <p class="text-sm text-gray-400 mb-5 flex-1 leading-relaxed">
+            pyThink(v1)의 교육 철학을 계승하면서 맞춤형 추천 엔진과 학습 분석을 추가한 v2.
+            학생의 코드에서 사고의 구조를 읽어내어, 6-Layer 병목 진단 + 8차원 벡터 공간 기반 추천 +
+            궤적 역학(DTW 유사도/군집화/허들 발견)으로 교사에게 한 줄 인사이트를 전달합니다.
+            AI가 분석하고, 교사가 판단합니다. 240명 학생 각각에게 "지금 이 문제"를 건네는 것.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="tag" style="background: rgba(249,115,22,0.08); color: rgba(249,115,22,0.7);">Pyodide</span>
+            <span class="tag">React 19</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Claude Sonnet 4</span>
+            <span class="tag">Zustand</span>
+            <span class="tag">Express</span>
+            <span class="tag" style="background: rgba(56,189,248,0.10); color: rgba(56,189,248,0.85);">Claude Code</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://pythink2.vercel.app" target="_blank" rel="noopener"
+               class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition border border-orange-500/20 text-orange-300/80 hover:text-orange-200 hover:border-orange-500/30 hover:bg-orange-500/5">바로가기</a>
+            <a href="https://github.com/greatsong/pythink2" target="_blank" rel="noopener"
+               class="px-5 py-2.5 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+        </div>
+
         <!-- 데이터 리터러시 랩 -->
         <div class="card fade-in project-card" style="animation-delay:0.15s" data-group="learning" data-repo="data-literacy-lab" data-order="2" data-stars="0">
           <div class="flex items-start justify-between mb-4">
@@ -668,6 +721,14 @@
               <td class="py-3 px-5 hidden md:table-cell text-gray-500">학습 플랫폼</td>
               <td class="py-3 px-5 text-blue-400/70">Vercel + Railway</td>
               <td class="py-3 px-5"><a href="https://github.com/greatsong/python-for-thinking-power" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
+              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
+            </tr>
+            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="learning" data-repo="pythink2" data-order="1" data-stars="0">
+              <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #f97316, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">pythink2</td>
+              <td class="py-3 px-5 hidden sm:table-cell">React 19 + Supabase + Claude Sonnet 4 + Pyodide</td>
+              <td class="py-3 px-5 hidden md:table-cell text-gray-500">학습 플랫폼</td>
+              <td class="py-3 px-5 text-blue-400/70">Vercel + Railway</td>
+              <td class="py-3 px-5"><a href="https://github.com/greatsong/pythink2" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
             <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="learning" data-repo="data-literacy-lab" data-order="2" data-stars="0">

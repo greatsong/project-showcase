@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:gpt-learn.up.railway.app)",
+      "Bash(git clone:*)",
+      "Bash(cat:*)",
+      "Bash(printf:*)",
+      "Read(//Users/greatsong/project-showcase/**)",
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc:*)",
+      "Bash(./node_modules/.bin/vite build:*)",
+      "Bash(npm ls:*)",
+      "Bash(node -c:*)",
+      "Bash(node --check:*)",
+      "Bash(find:*)",
+      "Bash(gh search code:*)",
+      "Bash(gh search:*)",
+      "Bash(node build.js:*)",
+      "Bash(node:*)",
+      "Bash(git stash:*)",
+      "Bash(head:*)",
+      "Bash(strings:*)",
+      "Bash(git config:*)",
+      "Bash(gitleaks git:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/greatsong/rubric-studio2",
+      "/Users/greatsong/2026aichattingreader/api",
+      "/tmp",
+      "/Users/greatsong/2026aichattingreader",
+      "/Users/greatsong"
+    ]
+  }
+}

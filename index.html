@@ -205,11 +205,23 @@
             <span class="tag">Express</span>
             <span class="tag" style="background: rgba(56,189,248,0.10); color: rgba(56,189,248,0.85);">Claude Code</span>
           </div>
-          <div class="flex gap-3 mt-auto">
+          <div class="flex gap-3 mb-3 mt-auto">
             <a href="https://pythink2.vercel.app" target="_blank" rel="noopener"
                class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition border border-orange-500/20 text-orange-300/80 hover:text-orange-200 hover:border-orange-500/30 hover:bg-orange-500/5">바로가기</a>
             <a href="https://github.com/greatsong/pythink2" target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
+          </div>
+          <!-- 파생 교재 3종 -->
+          <div class="pt-3 border-t border-white/[0.06]">
+            <p class="text-[10px] tracking-wider text-gray-600 uppercase mb-2">Teaching Materials</p>
+            <div class="flex gap-2">
+              <a href="https://greatsong.github.io/pythink2-theory/" target="_blank" rel="noopener"
+                 class="flex-1 text-center py-1.5 rounded-md text-xs transition border border-indigo-500/15 text-indigo-400/70 hover:text-indigo-300 hover:border-indigo-500/25 hover:bg-indigo-500/5">이론편</a>
+              <a href="https://greatsong.github.io/pythink2-solutions/" target="_blank" rel="noopener"
+                 class="flex-1 text-center py-1.5 rounded-md text-xs transition border border-teal-500/15 text-teal-400/70 hover:text-teal-300 hover:border-teal-500/25 hover:bg-teal-500/5">문제해결편</a>
+              <a href="https://greatsong.github.io/pythink2-slides/" target="_blank" rel="noopener"
+                 class="flex-1 text-center py-1.5 rounded-md text-xs transition border border-pink-500/15 text-pink-400/70 hover:text-pink-300 hover:border-pink-500/25 hover:bg-pink-500/5">강의안</a>
+            </div>
           </div>
         </div>
 
@@ -565,93 +577,6 @@
           </div>
         </div>
 
-        <!-- pythink2 이론편 -->
-        <div class="card fade-in project-card" style="animation-delay:0.3s" data-group="content" data-repo="pythink2-theory" data-order="8" data-stars="0">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M3 15.5V4.5A2 2 0 0 1 5 2.5h11v15H5a2 2 0 0 1 0-4h11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7h6M7 10h4" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
-              <span class="tag" style="background: rgba(56,189,248,0.1); color: rgba(56,189,248,0.8);">Claude Code</span>
-            </div>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 이론편</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            pythink2 로드맵 8월드 이론 교재. sim-student 오답 기반 "자주 하는 실수" + 월드별 "문제 풀기 전 꿀팁" 수록.
-            MkDocs Material 다크/라이트 토글 지원.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag" style="background: rgba(99,102,241,0.08); color: rgba(99,102,241,0.7);">MkDocs</span>
-            <span class="tag">8 Worlds</span>
-            <span class="tag">pythink2</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://greatsong.github.io/pythink2-theory/" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-indigo-400/70 hover:text-indigo-300 border border-indigo-500/15 hover:border-indigo-500/25 transition">바로가기</a>
-            <a href="https://github.com/greatsong/pythink2-theory" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
-        <!-- pythink2 문제해결편 -->
-        <div class="card fade-in project-card" style="animation-delay:0.35s" data-group="content" data-repo="pythink2-solutions" data-order="8" data-stars="0">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-amber-400 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><path d="M10 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z" stroke="white" stroke-width="1.3" fill="none"/><path d="M6 14h8M7 16.5h6" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
-              <span class="tag" style="background: rgba(56,189,248,0.1); color: rgba(56,189,248,0.8);">Claude Code</span>
-            </div>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #14b8a6, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 문제해결편</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            pythink2 23문제 전체 해설. 다중 풀이 + 접근법 비교표 + 12 아키타입별 학생 실수 패턴 + 교사 코칭 포인트.
-            비밀번호 보호(교사 전용).
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag" style="background: rgba(20,184,166,0.08); color: rgba(20,184,166,0.7);">MkDocs</span>
-            <span class="tag">23 Problems</span>
-            <span class="tag">Password Gate</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://greatsong.github.io/pythink2-solutions/" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-teal-400/70 hover:text-teal-300 border border-teal-500/15 hover:border-teal-500/25 transition">바로가기</a>
-            <a href="https://github.com/greatsong/pythink2-solutions" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
-        <!-- pythink2 강의안 -->
-        <div class="card fade-in project-card" style="animation-delay:0.4s" data-group="content" data-repo="pythink2-slides" data-order="8" data-stars="0">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
-              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5"><rect x="2" y="3" width="16" height="11" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M7 17h6M10 14v3" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M6 7l3 2-3 2z" fill="white" opacity="0.8"/></svg>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="card-star-badge hidden items-center gap-1 text-xs text-yellow-400/70"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="card-star-count">0</span></span>
-              <span class="tag" style="background: rgba(56,189,248,0.1); color: rgba(56,189,248,0.8);">Claude Code</span>
-            </div>
-          </div>
-          <h3 class="text-base font-semibold text-white mb-2" style="background: linear-gradient(135deg, #f97316, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 강의안</h3>
-          <p class="text-sm text-gray-500 mb-4 flex-1">
-            reveal.js 기반 8월드 강의 슬라이드. 6테마 선택기(Notion/Aurora/Ghibli/Pastel/Retro/Ocean).
-            교사 노트 + fragment 단계적 공개. 교실 프로젝터 최적화.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="tag" style="background: rgba(249,115,22,0.08); color: rgba(249,115,22,0.7);">reveal.js</span>
-            <span class="tag">6 Themes</span>
-            <span class="tag">Slides</span>
-          </div>
-          <div class="flex gap-3 mt-auto">
-            <a href="https://greatsong.github.io/pythink2-slides/" target="_blank" rel="noopener"
-               class="flex-1 text-center py-2 rounded-lg text-sm text-orange-400/70 hover:text-orange-300 border border-orange-500/15 hover:border-orange-500/25 transition">바로가기</a>
-            <a href="https://github.com/greatsong/pythink2-slides" target="_blank" rel="noopener"
-               class="px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-gray-300 border border-white/6 hover:border-white/12 transition">GitHub</a>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -940,30 +865,6 @@
               <td class="py-3 px-5 hidden md:table-cell text-gray-500">1,000 아이콘 + 색상 커스텀</td>
               <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
               <td class="py-3 px-5"><a href="https://github.com/greatsong/info-class-svg" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="pythink2-theory" data-order="8" data-stars="0">
-              <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 이론편</td>
-              <td class="py-3 px-5 hidden sm:table-cell">MkDocs Material</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">pythink2 8월드 이론</td>
-              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/pythink2-theory" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="pythink2-solutions" data-order="8" data-stars="0">
-              <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #14b8a6, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 문제해결편</td>
-              <td class="py-3 px-5 hidden sm:table-cell">MkDocs Material + Password Gate</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">23문제 해설 (교사용)</td>
-              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/pythink2-solutions" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
-              <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
-            </tr>
-            <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="content" data-repo="pythink2-slides" data-order="8" data-stars="0">
-              <td class="py-3 px-5 font-medium" style="background: linear-gradient(135deg, #f97316, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">파이썬 기초 강의안</td>
-              <td class="py-3 px-5 hidden sm:table-cell">reveal.js + 6 Themes</td>
-              <td class="py-3 px-5 hidden md:table-cell text-gray-500">8월드 슬라이드</td>
-              <td class="py-3 px-5 text-emerald-400/70">GitHub Pages</td>
-              <td class="py-3 px-5"><a href="https://github.com/greatsong/pythink2-slides" target="_blank" rel="noopener" class="star-cell inline-flex items-center gap-1 text-yellow-400/70 hover:text-yellow-300 transition"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="star-count">Public</span></a></td>
               <td class="py-3 px-5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1.5"></span>Active</td>
             </tr>
             <tr class="border-b border-white/[0.03] hover:bg-white/[0.02] table-row-filter" data-group="record" data-repo="class-manager-song" data-order="9" data-stars="0">
